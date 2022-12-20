@@ -19,6 +19,8 @@ const RightSide = styled.div`
     width: 70%;
 
     display: flex;
+
+    flex-direction: column;
 `;
 
 const ProjectHeader = styled.header`
@@ -48,6 +50,14 @@ const ProjectHeaderLink = styled.a`
     color: var(--text-color);
 `;
 
+const ProjectContent = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    margin-top: 8px;
+`;
+
 export {
     Container,
     LeftSide,
@@ -55,4 +65,5 @@ export {
     ProjectHeader,
     ProjectHeaderTitle,
     ProjectHeaderLink,
+    ProjectContent
 };

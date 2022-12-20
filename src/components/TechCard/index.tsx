@@ -12,7 +12,7 @@ export function TechCards() {
             <Content>
                 <TechGrid>
                     {techs.map((tech) => (
-                        <TechButton>
+                        <TechButton key={tech}>
                             <TechTitle>
                                 {tech}
                             </TechTitle>
