@@ -6,6 +6,8 @@ const Container = styled.div`
 
     display: flex;
     flex-direction: column;
+
+    padding: 16px 32px;
 `;
 
 const ProjectHeader = styled.header`

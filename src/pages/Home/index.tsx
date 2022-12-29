@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Profile } from "../../components/Profile";
 import { PersonalInfo } from "../../components/PersonalInfo";
 
@@ -9,54 +8,17 @@ import {
     ProjectHeaderLink,
     ProjectHeaderTitle,
     RightSide,
-    ProjectContent
+    ProjectContent,
 } from "./styles";
-import { TechCards } from "../../components/TechCard";
 
-import api from "../../services/api";
+import { TechCards } from "../../components/TechCard";
 import { ProjectCard } from "../../components/ProjectCard";
 
-type RepositoryProps = {
-    id: number;
-    title: string;
-    description: string;
-    forks: number;
-    stars: number;
-    language: string;
-};
+import useRepos from "../../hooks/useRepos";
 
 export function Home() {
-    const [repos, setRepos] = useState<RepositoryProps[]>([]);
-    const [loading, setLoading] = useState(false);
+    const { repos } = useRepos();
 
-    useEffect(() => {
-        async function loadRepos() {
-            try {
-                setLoading(true);
-    
-                const response = await api.get("/users/mardsonferreira/repos?per_page=6&page=1");
-    
-                const _repos = response.data.map((repo: any) => {
-                    return {
-                        id: repo.id,
-                        title: repo.name,
-                        description: repo.description,
-                        forks: repo.forks_count,
-                        stars: repo.stargazers_count,
-                        language: repo.language,
-                    };
-                });
-
-                setRepos(_repos);
-                setLoading(false);
-            } catch (err) {
-                console.log(err);
-                setLoading(false);
-            }
-        }
-
-        loadRepos();
-    }, []);
     return (
         <Container>
             <LeftSide>
