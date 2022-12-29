@@ -34,7 +34,7 @@ export function Home() {
             try {
                 setLoading(true);
     
-                const response = await api.get("/users/mardsonferreira/repos");
+                const response = await api.get("/users/mardsonferreira/repos?per_page=6&page=1");
     
                 const _repos = response.data.map((repo: any) => {
                     return {
@@ -71,7 +71,7 @@ export function Home() {
                 <ProjectHeader>
                     <ProjectHeaderTitle>My Projects</ProjectHeaderTitle>
 
-                    <ProjectHeaderLink>See All</ProjectHeaderLink>
+                    <ProjectHeaderLink to="/repos">See All</ProjectHeaderLink>
                 </ProjectHeader>
 
                 <ProjectContent>

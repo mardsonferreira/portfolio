@@ -1,26 +1,10 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Container = styled.div`
-    display: flex;
-    justify-content: space-between;
-
-    margin: 32px;
-`;
-
-const LeftSide = styled.div`
-    width: 25%;
+    width: 100%;
 
     display: flex;
-
-    flex-direction: column;
-`;
-
-const RightSide = styled.div`
-    width: 70%;
-
-    display: flex;
-
     flex-direction: column;
 `;
 
@@ -39,12 +23,6 @@ const ProjectHeader = styled.header`
     background: var(--bg-cards);
 `;
 
-const ProjectHeaderTitle = styled.span`
-    font-size: 23px;
-    font-weight: 700;
-    color: var(--text-color);
-`;
-
 const ProjectHeaderLink = styled(Link)`
     font-size: 13px;
     font-weight: 400;
@@ -59,12 +37,4 @@ const ProjectContent = styled.div`
     margin-top: 8px;
 `;
 
-export {
-    Container,
-    LeftSide,
-    RightSide,
-    ProjectHeader,
-    ProjectHeaderTitle,
-    ProjectHeaderLink,
-    ProjectContent
-};
+export { Container, ProjectHeader, ProjectHeaderLink, ProjectContent };
